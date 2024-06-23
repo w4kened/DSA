@@ -35,7 +35,7 @@ public class Main {
         System.out.println(BinarySearch_DSA.search(new int[] {2,1,4,5}, 5));
 
         Queue_DSA coffeeOrder = new Queue_DSA();
-        System.out.println("coffeeOrder queue has " + coffeeOrder.size + " orders.");
+        System.out.println("coffeeOrder Queue_DSA has " + coffeeOrder.size + " orders.");
         coffeeOrder.enqueue("latte");
         coffeeOrder.enqueue("espresso");
         coffeeOrder.enqueue("cappuccino");
