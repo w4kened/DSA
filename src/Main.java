@@ -29,8 +29,16 @@ public class Main {
         d_list.addToTail(new Node("4"));
 //        d_list.addToTail(new Node("5"));
 //        d_list.printList();
-        d_list.findMiddle(d_list);
+//        d_list.findMiddle(d_list);
 //        tracks.printList();
+
+        System.out.println(BinarySearch_DSA.search(new int[] {2,1,4,5}, 5));
+
+        Queue_DSA coffeeOrder = new Queue_DSA();
+        System.out.println("coffeeOrder queue has " + coffeeOrder.size + " orders.");
+        coffeeOrder.enqueue("latte");
+        coffeeOrder.enqueue("espresso");
+        coffeeOrder.enqueue("cappuccino");
 
 
 
@@ -61,7 +69,3 @@ class Node {
     public String getData() { return this.data; }
 }
 
-
-//class LinkedList_DSA {
-//
-//}
