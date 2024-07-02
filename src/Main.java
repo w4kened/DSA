@@ -40,6 +40,9 @@ public class Main {
         coffeeOrder.enqueue("espresso");
         coffeeOrder.enqueue("cappuccino");
 
+        Stack_DSA stack = new Stack_DSA();
+        System.out.println("This stack has " + stack.size + " nodes.");
+
 
 
     }
