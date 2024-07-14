@@ -32,7 +32,7 @@ public class Stack_DSA {
 
     public void push(String data) {
         if (hasSpace()) {
-            this.stack.addToHead(data);
+            this.stack.addToHead(new Node(data));
             this.size++;
             System.out.println("Added " + data + "! Stack size is now " + this.size);
         }

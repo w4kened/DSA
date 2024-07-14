@@ -1,7 +1,7 @@
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-
         /*Lists*/
         LinkedList_DSA list = new LinkedList_DSA();
         list.addToTail(new Node("2"));
@@ -39,11 +39,12 @@ public class Main {
         coffeeOrder.enqueue("latte");
         coffeeOrder.enqueue("espresso");
         coffeeOrder.enqueue("cappuccino");
+//        Character.code
+//        new Object().hashCode()
 
-        Stack_DSA stack = new Stack_DSA();
-        System.out.println("This stack has " + stack.size + " nodes.");
-
-
+        HashMap_DSA aboutMe = new HashMap_DSA(3);
+        aboutMe.assign("myFavoriteColor", "brown");
+        System.out.println(aboutMe.retrieve("myFavoriteColor"));
 
     }
 }
