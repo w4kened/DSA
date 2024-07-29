@@ -6,19 +6,36 @@ public class LinkedList_DSA {
     }
 
     public void addToHead(Node node) {
-        Node newNode = new Node(node.getData());
+        Node newNode;
+        if (node.key == null && node.value == null) {
+             newNode = new Node(node.getData());
+            System.out.println("non map node asserted");
+
+        }
+        else {
+            System.out.println("map node asserted");
+
+             newNode = new Node(node.getKey(), node.getValue());
+        }
         Node currentNode = this.head;
         this.head = newNode;
-
         if (currentNode != null) {
             this.head.setNextNode(currentNode);
         }
     }
 
     public void addToTail(Node node) {
-        Node newNode = new Node(node.getData());
-        Node currentNode = this.head;
+        Node newNode;
+        if (node.key == null && node.value == null) {
+            newNode = new Node(node.getData());
+            System.out.println("non map node asserted");
+        }
+        else {
+            System.out.println("map node asserted");
 
+            newNode = new Node(node.getKey(), node.getValue());
+        }
+        Node currentNode = this.head;
         if (currentNode == null) {
             this.head = newNode;
         } else {
