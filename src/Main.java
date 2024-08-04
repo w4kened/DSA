@@ -11,11 +11,11 @@ public class Main {
 //        list.removeHead();
 //        list.printList();
 ////
-//        LinkedList_DSA tracks = new LinkedList_DSA();
-//        tracks.printList();
-//        tracks.addToHead(new Node("M"));
-//        tracks.addToHead(new Node("Z"));
-//        tracks.addToHead(new Node("A"));
+        LinkedList_DSA tracks = new LinkedList_DSA();
+        tracks.printList();
+        tracks.addToHead(new Node("M"));
+        tracks.addToHead(new Node("Z"));
+        tracks.addToHead(new Node("A"));
 //        tracks.printList();
 //        tracks.removeNodeByData("Z");
 //        tracks.removeNodeByData("M");
@@ -42,6 +42,7 @@ public class Main {
         System.out.println("> "+birdCensus.retrieve("mandarin duck"));
         System.out.println(birdCensus.retrieve("monk parakeet"));
         System.out.println(birdCensus.retrieve("horned owl"));
+        System.out.println(tracks.findNodeRecursively("Z", tracks.head));
 //        System.out.println(aboutMe.retrieve("myFavoriteColor"));
 
     }
@@ -66,6 +67,8 @@ class Node {
         this.value = value;
         this.next = null;
     }
+
+
 
     public void setNextNode(Node node) {
         this.next = node;

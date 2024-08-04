@@ -5,6 +5,30 @@ public class LinkedList_DSA {
         this.head = null;
     }
 
+
+    public Node findNodeIteratively(String data) {
+        Node currentNode = this.head;
+
+        while (currentNode != null) {
+            if (currentNode.data == data) {
+                return currentNode;
+            }
+            currentNode = currentNode.getNextNode();
+        }
+
+        return null;
+    }
+
+    public Node findNodeRecursively(String data, Node currentNode) {
+        if (currentNode == null) {
+            return null;
+        } else if (currentNode.data == data) {
+            return currentNode;
+        } else {
+            return this.findNodeRecursively(data, currentNode.getNextNode());
+        }
+    }
+
     public void addToHead(Node node) {
         Node newNode;
         if (node.key == null && node.value == null) {
