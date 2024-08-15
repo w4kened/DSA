@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
@@ -44,6 +45,26 @@ public class Main {
         System.out.println(birdCensus.retrieve("horned owl"));
         System.out.println(tracks.findNodeRecursively("Z", tracks.head));
 //        System.out.println(aboutMe.retrieve("myFavoriteColor"));
+
+
+        TreeNode treeRoot = new TreeNode("S");
+        TreeNode child1 = new TreeNode("N");
+        TreeNode child2 = new TreeNode("O");
+        TreeNode grandchild1 = new TreeNode("W");
+        TreeNode grandchild2 = new TreeNode("Y");
+
+        // addChild operations below
+        treeRoot.addChild(child1);
+        treeRoot.addChild(child2);
+        child1.addChild(grandchild1);
+        child2.addChild(grandchild2);
+
+        // Create tree
+        Tree_DSA letters = new Tree_DSA(treeRoot);
+        letters.print();
+        treeRoot.children.remove("N");
+        letters.print();
+
 
     }
 }
@@ -98,3 +119,36 @@ class Node {
     }
 }
 
+class TreeNode {
+
+    public Object data;
+    public ArrayList<TreeNode> children;
+
+    public TreeNode(Object data) {
+        this.data = data;
+        this.children = new ArrayList<TreeNode>();
+    }
+
+    public void addChild(TreeNode child) {
+        children.add(child);
+    }
+    public void addChild(Object childData) {
+        children.add(new TreeNode(childData));
+    }
+
+    public void removeChild(TreeNode childToRemove) {
+        if (this.children.isEmpty())  {
+            return;
+        }
+        else if (this.children.contains(childToRemove)) {
+            this.children.remove(childToRemove);
+            return;
+        }
+        else {
+            for (TreeNode child : this.children) {
+                child.removeChild(childToRemove);
+            }
+        }
+    }
+
+}
