@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Tree_DSA {
 
     // Instance variable here
@@ -20,6 +23,23 @@ public class Tree_DSA {
         System.out.println(levelMarks + current.data);
         for (TreeNode child : current.children) {
             print(child, level + 1);
+        }
+    }
+    public void depthFirstTraversal(TreeNode current) {
+        System.out.println(current.data+" ");
+        for (TreeNode child : current.children) {
+            depthFirstTraversal(child);
+        }
+    }
+
+    public void breadthFirstTraversla() {
+        TreeNode current = this.root;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(current);
+        while (current != null) {
+            current = queue.poll();
+            System.out.print(current.data+" ");
+            queue.addAll(current.children);
         }
     }
 }

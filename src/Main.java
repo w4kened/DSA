@@ -62,7 +62,9 @@ public class Main {
         // Create tree
         Tree_DSA letters = new Tree_DSA(treeRoot);
         letters.print();
-        treeRoot.removeChild("N");
+        letters.breadthFirstTraversla();
+
+//        treeRoot.removeChild("N");
         letters.print();
 
     }
