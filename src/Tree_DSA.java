@@ -25,21 +25,24 @@ public class Tree_DSA {
             print(child, level + 1);
         }
     }
+    public void breadthFirstTraversal() {
+        TreeNode current = this.root;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(current);
+        while (!queue.isEmpty()) {
+            current = queue.poll();
+//            System.out.print(current.data+" ");
+            queue.addAll(current.children);
+            System.out.println();
+        }
+    }
+
     public void depthFirstTraversal(TreeNode current) {
-        System.out.println(current.data+" ");
+        System.out.print(current.data+" ");
         for (TreeNode child : current.children) {
             depthFirstTraversal(child);
         }
     }
 
-    public void breadthFirstTraversla() {
-        TreeNode current = this.root;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(current);
-        while (current != null) {
-            current = queue.poll();
-            System.out.print(current.data+" ");
-            queue.addAll(current.children);
-        }
-    }
+
 }

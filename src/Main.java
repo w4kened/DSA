@@ -52,21 +52,28 @@ public class Main {
         TreeNode child2 = new TreeNode("O");
         TreeNode grandchild1 = new TreeNode("W");
         TreeNode grandchild2 = new TreeNode("Y");
-
         // addChild operations below
         treeRoot.addChild(child1);
         treeRoot.addChild(child2);
         child1.addChild(grandchild1);
         child2.addChild(grandchild2);
-
         // Create tree
         Tree_DSA letters = new Tree_DSA(treeRoot);
         letters.print();
-        letters.breadthFirstTraversla();
+
+        long startTime = System.nanoTime(); // ... the code being measured ...
+        letters.breadthFirstTraversal();
+        long elapsedNanos = System.nanoTime() - startTime;
+        System.out.println( elapsedNanos + " nanoseconds" );
+
+        startTime = System.nanoTime();
+        letters.depthFirstTraversal(letters.root);
+
+        elapsedNanos = System.nanoTime() - startTime;
+        System.out.println( elapsedNanos + " nanoseconds" );
 
 //        treeRoot.removeChild("N");
-        letters.print();
-
+//        letters.print();
     }
 }
 
