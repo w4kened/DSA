@@ -72,6 +72,18 @@ public class Main {
         elapsedNanos = System.nanoTime() - startTime;
         System.out.println( elapsedNanos + " nanoseconds" );
 
+
+        // Insert values below:
+        System.out.println("Creating Binary Search Tree rooted at value 15:");
+        BinarySearchTree_DSA tree = new BinarySearchTree_DSA(15);
+
+        for (int i = 0; i < 100; i++) {
+            tree.insert((int) (-2 + Math.random() * 5));
+        }
+
+        System.out.println("Printing the inorder depth-first traversal:");
+        tree.depthFirstTraversal();
+
 //        treeRoot.removeChild("N");
 //        letters.print();
     }
