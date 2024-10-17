@@ -34,7 +34,7 @@ public class MinHeap_DSA {
 
     private void bubbleUp() {
         int current = this.size;
-        while (current > 1 && this.heap.get(current) < this.heap.get(this.getParent(current))) {
+        while (current > 1 && this.heap.get(this.getParent(current)) > this.heap.get(current)) {
             System.out.println("Swap index " + current + " with index " + this.getParent(current));
             System.out.println(this.heap);
             this.swap(current, this.getParent(current));
@@ -46,18 +46,26 @@ public class MinHeap_DSA {
         int current = 1;
         int leftChild = this.getLeft(current);
         int rightChild = this.getRight(current);
+        while (this.canSwap(current, leftChild, rightChild)) {
 
-        // boolean conditionFlag = this.canSwap(current, leftChild, rightChild) ;
-        while(this.canSwap(current, leftChild, rightChild) ) {
+            if (this.exists(rightChild) && this.exists(leftChild)) {
+                if (this.heap.get(leftChild) < this.heap.get(rightChild)) {
+                    this.swap(current, leftChild);
+                    current = leftChild;
+
+                }
+                else {
+                    this.swap(current, rightChild);
+                    current = rightChild;
+
+                }
+
+            }
             current = leftChild;
             leftChild = this.getLeft(current);
             rightChild = this.getRight(current);
-
         }
-
     }
-
-
 
     private void swap(int a, int b) {
         int temp = this.heap.get(b);
