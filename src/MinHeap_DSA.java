@@ -23,14 +23,20 @@ public class MinHeap_DSA {
         if (this.size == 0) {
             throw new Error("Heap is empty!");
         }
+
         System.out.println("Swap min element " + this.heap.get(1) + " and last element " + this.heap.get(this.size));
         this.swap(1, this.size);
+
         int min = this.heap.remove(this.size);
         System.out.println("Removed from the heap: " + min);
         System.out.println(this.heap);
+
         this.size--;
+        this.heapify();
+
         return min;
     }
+
 
     private void bubbleUp() {
         int current = this.size;
@@ -46,18 +52,17 @@ public class MinHeap_DSA {
         int current = 1;
         int leftChild = this.getLeft(current);
         int rightChild = this.getRight(current);
-        while (this.canSwap(current, leftChild, rightChild)) {
 
+        while (this.canSwap(current, leftChild, rightChild)) {
             if (this.exists(rightChild) && this.exists(leftChild)) {
                 if (this.heap.get(leftChild) < this.heap.get(rightChild)) {
-                    this.swap(current, leftChild);
+                    this.swap(current, leftChild); //swaping objects with int arguments
                     current = leftChild;
 
                 }
                 else {
                     this.swap(current, rightChild);
                     current = rightChild;
-
                 }
 
             }
@@ -66,6 +71,8 @@ public class MinHeap_DSA {
             rightChild = this.getRight(current);
         }
     }
+
+
 
     private void swap(int a, int b) {
         int temp = this.heap.get(b);
