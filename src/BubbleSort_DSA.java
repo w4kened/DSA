@@ -30,6 +30,10 @@ public class BubbleSort_DSA {
     }
 
     public static void main(String[] args) {
+        long startTime = System.nanoTime(); // ... the code being measured ...
         bubbleSort(new int[] {1,5,4,6,2,3});
+        long elapsedNanos = System.nanoTime() - startTime;
+        System.out.println( elapsedNanos + " nanoseconds" );
+
     }
 }

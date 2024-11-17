@@ -50,8 +50,6 @@ public class MergeSort_DSA {
         System.out.println("arraycopy from remaining right to merged "+Arrays.toString(merged));
 
         return merged;
-
-
     }
 
 
@@ -60,6 +58,10 @@ public class MergeSort_DSA {
         MergeSort_DSA sorter = new MergeSort_DSA();
         System.out.println("input "+ Arrays.toString(inputArr));
 
+        long startTime = System.nanoTime(); // ... the code being measured ...
         System.out.println(Arrays.toString(sorter.divide(inputArr)));
+        long elapsedNanos = System.nanoTime() - startTime;
+
+        System.out.println( elapsedNanos + " nanoseconds" );
     }
 }
