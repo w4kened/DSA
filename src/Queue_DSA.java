@@ -29,6 +29,10 @@ public class Queue_DSA {
         }
     }
 
+//    public void enqueue(Vertex data) {
+//        this.Queue_DSA.addToTail(data);
+//    }
+
     // Define deQueue_DSA() below
     public String deQueue_DSA() {
         if (!isEmpty()) {
