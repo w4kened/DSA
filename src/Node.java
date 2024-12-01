@@ -1,5 +1,8 @@
 public class Node {
-
+    /*
+    This Node class is not compatible for Graph vertices
+    to-do: need to rework
+    */
     public String data;
     private Node next;
     private Node previous;

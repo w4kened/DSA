@@ -7,8 +7,6 @@ public class GraphTraverser_DSA {
     public static void depthFirstTraversal(Vertex start, ArrayList<Vertex> visitedVertices) {
         System.out.println(start.getData());
 
-        // if (start.getEdges().size() > 0) {
-        // Vertex startIter = start.getEdges().get(0);
         for (Edge iterEdge : start.getEdges()) {
             Vertex neighbor = iterEdge.getEnd();
 
@@ -18,26 +16,24 @@ public class GraphTraverser_DSA {
             }
         }
     }
-
     public static void breadthFirstTraversal(Vertex start, ArrayList<Vertex> visitedVertices) {
         LinkedList<Vertex> visitQueue = new LinkedList<>();
         visitQueue.addLast(start);
 
-
         while (!visitQueue.isEmpty()){
             Vertex current = visitQueue.removeFirst();
             System.out.println(current.getData());
-            for(Edge e : current.getEdges()) {
-                Vertex neighbor = e.getEnd();
+
+            for(Edge iterEdge : current.getEdges()) {
+                Vertex neighbor = iterEdge.getEnd();
+
                 if(!visitedVertices.contains(neighbor)) {
                     visitQueue.addLast(neighbor);
                     visitedVertices.add(neighbor);
                 }
             }
         }
-
     }
-
     public static void main(String[] args) {
         TestGraph test = new TestGraph();
         Vertex startingVertex = test.getStartingVertex();
@@ -51,7 +47,7 @@ public class GraphTraverser_DSA {
     }
 }
 class TestGraph {
-    private Graph_DSA testGraph;
+    private final Graph_DSA testGraph;
 
     public TestGraph() {
         this.testGraph = new Graph_DSA(false, true);
@@ -85,6 +81,6 @@ class TestGraph {
     }
 
     public Vertex getStartingVertex() {
-        return this.testGraph.getVertices().get(0);
+        return this.testGraph.getVertices().getFirst();
     }
 }
