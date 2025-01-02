@@ -1,4 +1,7 @@
+package w4kened;
+
 import java.util.*;
+
 
 public class Dijkstra_DSA {
     public static Dictionary[] dijkstra (Graph_DSA g, Vertex startingVertex){

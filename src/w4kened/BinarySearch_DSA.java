@@ -1,3 +1,5 @@
+package w4kened;
+
 public class BinarySearch_DSA {
     public static int search(int[] arr, int target) {
         // Add left and right variables below
@@ -19,8 +21,6 @@ public class BinarySearch_DSA {
                 right = mid;
             }
         }
-
-
 
         return -1;
 

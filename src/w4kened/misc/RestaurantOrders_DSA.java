@@ -1,3 +1,7 @@
+package w4kened.misc;
+
+import w4kened.Queue_DSA;
+
 public class RestaurantOrders_DSA {
 
     public Queue_DSA headChef;

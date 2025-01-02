@@ -1,3 +1,5 @@
+package w4kened;
+
 public class Queue_DSA {
     private LinkedList_DSA Queue_DSA;
     public int size;

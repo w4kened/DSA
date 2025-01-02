@@ -1,3 +1,5 @@
+package w4kened;
+
 public class Node {
     /*
     This Node class is not compatible for Graph vertices

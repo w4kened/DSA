@@ -1,4 +1,4 @@
-import java.math.BigInteger;
+package w4kened;
 
 public class HashMap_DSA {
     public LinkedList_DSA[] hashmap;

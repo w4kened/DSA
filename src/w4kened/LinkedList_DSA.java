@@ -1,3 +1,5 @@
+package w4kened;
+
 public class LinkedList_DSA {
     public Node head;
 

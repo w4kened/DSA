@@ -1,3 +1,5 @@
+package w4kened;
+
 public class Stack_DSA {
 
     public LinkedList_DSA stack;

@@ -1,3 +1,5 @@
+package w4kened;
+
 public class BinarySearchTree_DSA {
     public int value;
     public int depth;
